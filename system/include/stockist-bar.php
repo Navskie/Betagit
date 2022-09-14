@@ -165,6 +165,14 @@
             </a>
           </li>
           <?php } ?>
+          <li class="nav-item">
+            <a href="stockist-wallet.php" class="nav-link">
+              <i class="nav-icon uil uil-wallet"></i>
+              <p>
+                Stockist Wallet
+              </p>
+            </a>
+          </li>
           <!-- END -->
         </ul>
       </nav>

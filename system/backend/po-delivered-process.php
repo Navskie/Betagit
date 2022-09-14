@@ -17,6 +17,7 @@
         $p_desc = $product['spo_item_desc'];
         $p_qty = $product['spo_item_qty'];
         $p_country = $product['spo_country'];
+        $p_state = $product['spo_state'];
         $Ucode = $product['spo_code'];
 
         $check_reseller_inv = "SELECT * FROM stockist_inventory WHERE si_code = '$Ucode' AND si_item_code = '$p_code'";
@@ -25,7 +26,7 @@
         $check_reseller_inv_num = mysqli_num_rows($check_reseller_inv_qry);
 
         if ($check_reseller_inv_num == 0) {
-            $insert_stock = "INSERT INTO stockist_inventory (si_code, si_item_code, si_item_desc, si_item_stock, si_item_date, si_item_added, si_item_country) VALUES ('$Ucode', '$p_code', '$p_desc', '$p_qty', '$date', '$date', '$p_country')";
+            $insert_stock = "INSERT INTO stockist_inventory (si_code, si_item_code, si_item_desc, si_item_stock, si_item_date, si_item_added, si_item_country, si_item_state) VALUES ('$Ucode', '$p_code', '$p_desc', '$p_qty', '$date', '$date', '$p_country', '$p_state')";
             $insert_stock_qry = mysqli_query($connect, $insert_stock);
         } else {
             $new_stock = $p_qty + $check_reseller_inv_fetch['si_item_stock'];
