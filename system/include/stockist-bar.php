@@ -77,7 +77,9 @@
             $check_stockist_num = mysqli_num_rows($check_stockist_qry);
 
             $country = $check_stockist_fetch['stockist_country'];
-            $get_sum_data = "SELECT COUNT(*) AS bilang FROM upti_transaction WHERE trans_country = '$country' AND trans_status = 'Pending'";
+            $state = $check_stockist_fetch['stockist_state'];
+
+            $get_sum_data = "SELECT COUNT(*) AS bilang FROM upti_transaction WHERE trans_country = '$country' AND trans_status = 'Pending' AND trans_country = '$state'";
             $get_sum_data_qry = mysqli_query($connect, $get_sum_data);
             $get_sum_data_fetch = mysqli_fetch_array($get_sum_data_qry);
           ?>
@@ -125,15 +127,7 @@
           </li>
           <!-- EXCLUSIVE -->
           <?php
-            $code_reseller = $_SESSION['code'];
-
-            $check_stockist = "SELECT * FROM stockist WHERE stockist_code = '$code_reseller'";
-            $check_stockist_qry = mysqli_query($connect, $check_stockist);
-            $check_stockist_fetch = mysqli_fetch_array($check_stockist_qry);
-            $check_stockist_num = mysqli_num_rows($check_stockist_qry);
-
-            $country = $check_stockist_fetch['stockist_country'];
-            $get_sum_data = "SELECT COUNT(*) AS bilang FROM web_transaction WHERE trans_country = '$country' AND trans_status = 'Pending'";
+            $get_sum_data = "SELECT COUNT(*) AS bilang FROM web_transaction WHERE trans_country = '$country' AND trans_status = 'Pending' AND trans_state = '$state'";
             $get_sum_data_qry = mysqli_query($connect, $get_sum_data);
             $get_sum_data_fetch = mysqli_fetch_array($get_sum_data_qry);
           ?>
@@ -149,7 +143,7 @@
           <?php
             if ($check_stockist_num > 0) {
               $country = $check_stockist_fetch['stockist_country'];
-              $get_sum_data = "SELECT COUNT(*) AS bilang FROM upti_transaction WHERE trans_country = '$country' AND trans_status = 'RTS' AND trans_stockist = 'Not Received'";
+              $get_sum_data = "SELECT COUNT(*) AS bilang FROM upti_transaction WHERE trans_country = '$country' AND trans_status = 'RTS' AND trans_stockist = 'Not Received' AND trans_state = '$state'";
               $get_sum_data_qry = mysqli_query($connect, $get_sum_data);
               $get_sum_data_fetch = mysqli_fetch_array($get_sum_data_qry);
           ?>
