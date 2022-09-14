@@ -131,53 +131,6 @@
               </p>
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-                Manage Items
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="item-list.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Single Item</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="item-package.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bundle</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="item-code.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Item Code</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="item-category.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Item Category</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="item-country.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Country Price</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="item-country-currency.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Country</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
 
           <li class="nav-header">Customer Order</li>
           <li class="nav-item">
@@ -1046,11 +999,19 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <a href="reseller.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="ticket.php" class="nav-link">
+              <i class="nav-icon fas fa-list-ol"></i>
+              <p>
+                Ticket
               </p>
             </a>
           </li>
@@ -1249,6 +1210,7 @@
               </li>
             </ul>
           </li>
+          
         </ul>
         <?php } ?>
       </nav>
